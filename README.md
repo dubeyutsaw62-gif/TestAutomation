@@ -1,40 +1,19 @@
-# Multi-Framework Test Automation Sandbox (Java Engine)
+# Selenium WebDriver Automation Demo
 
-A comprehensive, production-grade test automation repository demonstrating cross-tier validation strategies. This project implements front-end User Interface (UI) testing using both legacy and modern engines alongside fast, programmatic back-end Application Programming Interface (API) validation.
+A lightweight, standalone Java automation project demonstrating web UI interactions using Selenium WebDriver, Maven, and Explicit Waits.
 
----
+## Architecture & Tech Stack
+* **Language:** Java 17+
+* **Build Tool:** Maven (Quickstart Archetype)
+* **Automation Tool:** Selenium WebDriver (v4.21.0)
+* **Driver Management:** WebDriverManager
 
-##  Key Learning Objectives & Architecture
+## Automation Use Cases Covered
+1. **Dynamic Synchronization:** Leveraged `WebDriverWait` and `ExpectedConditions` (Explicit Waits) to handle asynchronous element rendering dynamically, eliminating flaky test execution.
+2. **Element Locators:** Implemented robust element targeting using advanced selectors (`By.id`, `By.cssSelector`).
+3. **Session Management:** Proper instantiation and teardown routing for the `ChromeDriver` lifecycle.
 
-This sandbox repository moves away from isolated, single-tool scripting to showcase an integrated, multi-framework test harness under a unified Maven dependency management lifecycle.
-
-### 1. Front-End UI Automation (Classic)
-* **Engine:** Selenium WebDriver 4.x
-* **Core Focus:** Structural DOM synchronization, element wait mechanisms (`Implicit`, `Explicit`, `Fluent`), and cross-browser driver pooling.
-* **Target:** Core interface interactions, handling dynamic elements, and simulating authentic user journeys.
-
-### 2. Front-End UI Automation (Modern Next-Gen)
-* **Engine:** Microsoft Playwright for Java
-* **Core Focus:** Automated code generation (`codegen`), execution speed optimization, headful/headless binary switching, and native auto-retry assertion polling.
-* **Target:** Rapid UI verification bypassing the typical resource overhead seen in traditional WebDriver architectures.
-
-### 3. Back-End API Automation
-* **Engine:** REST-Assured
-* **Core Focus:** Fluent Behavior-Driven Development (BDD) syntax patterns (`given()`, `when()`, `then()`), JSON data payload traversal, network firewall/User-Agent spoofing, and HTTP header security injection.
-* **Target:** Direct database logic communication layer validation, bypassing presentation rendering to verify schema structure and core transactional data integrity.
-
----
-
-##  Framework Component Map
-
-The automation suites are segmented within standard Maven test test-class roots:
-
-```text
-SeleniumDemo/
-│
-├── src/test/java/com/automation/SeleniumDemo/
-│   ├── App.java            <-- Core Selenium WebDriver Suite (UI Testing)
-│   ├── PlaywrightDemo.java <-- Playwright Context Lifecycle (Modern UI Testing)
-│   └── ApiDemo.java        <-- REST-Assured Network Verification (API Testing)
-│
-└── pom.xml                 <-- Unified Maven Dependency & Plugin Core Manifest
+## How to Run Locally
+1. Clone the repository: `git clone <your-repo-url>`
+2. Import as a Maven project into Eclipse or IntelliJ.
+3. Run `src/main/java/com/automation/SeleniumDemo/App.java` as a Java Application.
